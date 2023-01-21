@@ -5,13 +5,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{}>
 ) {
-  console.log(req.body);
-  const { link, authCode } = req.body;
+  // TODO: Validation/safe parsing
+  const { link, authCode } = JSON.parse(req.body);
 
   if (typeof link !== "string") {
     res.status(400).json({
       detail: "Link attribute is required",
     });
+    return;
   }
 
   const authArgs =
