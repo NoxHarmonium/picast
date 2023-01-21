@@ -7,6 +7,6 @@ const project = new web.NextJsTypeScriptProject({
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
-  // tailwind: true,          /* Setup Tailwind CSS as a PostCSS plugin. */
+  tailwind: false /* Setup Tailwind CSS as a PostCSS plugin. */,
 });
 project.synth();

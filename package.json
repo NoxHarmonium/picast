@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "isomorphic-fetch": "^3",
     "next": "^13.1.4",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
