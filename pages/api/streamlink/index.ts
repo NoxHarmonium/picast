@@ -17,7 +17,7 @@ export default async function handler(
 
   const authArgs =
     typeof authCode === "string" && authCode.trim().length > 0
-      ? [`--twitch-api-header="Authorization=OAuth ${authCode}`]
+      ? [`--twitch-api-header=Authorization=OAuth ${authCode}`]
       : [];
 
   const args = [
