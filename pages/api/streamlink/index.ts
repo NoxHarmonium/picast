@@ -29,7 +29,18 @@ export default async function handler(
     "480p",
   ];
 
-  await spawn("streamlink", args);
+  const process = spawn("streamlink", args);
+
+  process.stdout.setEncoding("utf8");
+  process.stdout.on("data", function (data) {
+    var str = data.toString();
+    var lines = str.split(/(\r?\n)/g);
+    console.log(lines.join(""));
+  });
+
+  process.on("close", function (code) {
+    console.log("process exit code " + code);
+  });
 
   return res.status(200).json({});
 }
